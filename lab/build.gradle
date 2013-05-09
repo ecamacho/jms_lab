@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply plugin: 'jetty'
+
+stopPort = 9091
+httpPort = 9090
+
+dependencies {
+    compile project(':api')
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+}
+
+war {
+
+  from file('WEB-INF/jsp/*.jsp')
+}
